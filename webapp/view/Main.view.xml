@@ -2,6 +2,81 @@
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     xmlns="sap.m">
     <Page id="page" title="{i18n>title}">
-        <content />
+        
+        <content>
+            <Table
+                id="salesorderTable"
+                items="{/SalesOrderSet}"
+                headerText="Sales Orders"
+            >
+                <columns>
+                    <Column
+                        id="vbelnCol"
+                        width="12em"
+                    >
+                        <VBox>
+                            <Text text="Vbeln" />
+                        </VBox>
+                    </Column>
+                    <Column
+                        id="erdatCol"
+                        minScreenWidth="Tablet"
+                        demandPopin="true"
+                        hAlign="End"
+                    >
+                        <Text text="Creation Date" />
+                    </Column>
+                    <Column
+                        id="vkorgCol"
+                        minScreenWidth="Tablet"
+                        demandPopin="true"
+                        hAlign="End"
+                    >
+                        <Text text="Organisation" />
+                    </Column>
+                    <Column
+                        id="ernamCol"
+                        minScreenWidth="Tablet"
+                        demandPopin="true"
+                        hAlign="End"
+                    >
+                        <Text text="Created By" />
+                    </Column>
+                    <Column
+                        id="auartCol"
+                        minScreenWidth="Tablet"
+                        demandPopin="true"
+                        hAlign="End"
+                    >
+                        <Text text="Document Type" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem
+                        type="Active"
+                        vAlign="Middle"
+                        navigated="{
+						parts: [
+							'settings>/navigatedItem',
+							'Vbeln'
+						],
+						formatter: '.isNavigated'
+					}"
+                        press="onPress"
+                    >
+                        <cells>
+                            <ObjectIdentifier
+                                title="{Vbeln}"
+
+                            />
+                            <Text text="{Erdat}" />
+                            <Text text="{Vkorg}" />
+                            <Text text="{Ernam}" />
+                            <Text text="{Auart}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
     </Page>
 </mvc:View>
