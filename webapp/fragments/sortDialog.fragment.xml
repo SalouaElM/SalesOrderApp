@@ -1,0 +1,14 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<ViewSettingsDialog
+		confirm="handleSortDialogConfirm">
+		<sortItems>
+			<ViewSettingsItem text="Vbeln" key="Vbeln" selected="true" />
+			<ViewSettingsItem text="Creation Date" key="Erdat" />
+			<ViewSettingsItem text="Organization" key="Vkorg" />
+			<ViewSettingsItem text="Responsible Person" key="Ernam" />
+            <ViewSettingsItem text="Document Type" key="Auart" />
+		</sortItems>
+	</ViewSettingsDialog>
+</core:FragmentDefinition>

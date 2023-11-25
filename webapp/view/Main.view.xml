@@ -8,8 +8,22 @@
             <Table
                 id="salesorderTable"
                 items="{/SalesOrderSet}"
-                headerText="Sales Orders"
             >
+             <headerToolbar>
+				<OverflowToolbar>
+					<Title text="Sales Orders" level="H2"/>
+					<ToolbarSpacer/>
+					<Button
+						tooltip="Sort"
+						icon="sap-icon://sort"
+						press="handleSortButtonPressed"/>
+					<Button
+						tooltip="Filter"
+						icon="sap-icon://filter"
+						press="handleFilterButtonPressed"/>
+
+				</OverflowToolbar>
+			</headerToolbar>
                 <columns>
                     <Column
                         id="vbelnCol"
