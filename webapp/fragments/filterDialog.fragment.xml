@@ -1,0 +1,29 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<ViewSettingsDialog
+		confirm="handleFilterDialogConfirm">
+		<filterItems>
+			<ViewSettingsFilterItem
+				text="Document Type"
+				key="Auart"
+				multiSelect="true">
+				<items>
+					<ViewSettingsItem text="Standard Order" key="OR" />
+					<ViewSettingsItem text="Standard Order 1" key="OR1" />
+                    <ViewSettingsItem text="Quotation" key="QT" />
+                    <ViewSettingsItem text="Promotion Order" key="AA" />
+				</items>
+			</ViewSettingsFilterItem>
+            <ViewSettingsFilterItem
+				text="Created By"
+				key="Ernam"
+				multiSelect="true">
+				<items>
+					<ViewSettingsItem text="RHAEUSLER" key="RHAEUSLER" />
+					<ViewSettingsItem text="DEVSD-002" key="DEVSD-002" />
+				</items>
+			</ViewSettingsFilterItem>
+		</filterItems>
+	</ViewSettingsDialog>
+</core:FragmentDefinition>
