@@ -103,6 +103,47 @@
             "type": "XML",
             "async": true,
             "id": "fcl"
+        },
+            
+        "routing": {
+        "config": {
+            "routerClass": "sap.f.routing.Router",
+            "type": "View",
+            "viewType": "XML",
+            "path": "ap.salesorderapp.view",
+            "controlId": "fcl",
+            "transition": "slide",
+            "bypassed": {},
+            "async": true,
+            "clearControlAggregation": false
+        },
+        "routes": [
+            {
+            "pattern": ":?layout:",
+            "name": "master",
+            "target": [
+                "master"
+            ]
+            },
+            {
+            "pattern": "detail/{salesorder}/{layout}",
+            "name": "detail",
+            "target": [
+                "master",
+                "detail"
+            ]
+            }
+        ],
+        "targets": {
+            "master": {
+            "viewName": "Main",
+            "controlAggregation": "beginColumnPages"
+            },
+            "detail": {
+            "viewName": "SalesorderDetail",
+            "controlAggregation": "midColumnPages"
+            }
         }
     }
+}
 }

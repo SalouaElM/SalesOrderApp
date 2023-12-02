@@ -1,4 +1,5 @@
 <mvc:View
+	controllerName="ap.salesorderapp.controller.SalesorderDetail"
 	xmlns:mvc="sap.ui.core.mvc" xmlns="sap.uxap"
 	xmlns:m="sap.m"
 	xmlns:f="sap.f"
@@ -17,19 +18,6 @@
 				</actions>
 			</ObjectPageDynamicHeaderTitle>
 		</headerTitle>
-        <headerContent>
-			<m:FlexBox wrap="Wrap" fitContainer="true" alignItems="Stretch">
-				<m:VBox justifyContent="Center" class="sapUiSmallMarginEnd">
-					<m:Label text="Main Category"/>
-				</m:VBox>
-				<m:VBox justifyContent="Center" class="sapUiSmallMarginEnd">
-					<m:Label text="Subcategory"/>
-				</m:VBox>
-				<m:VBox justifyContent="Center" class="sapUiSmallMarginEnd">
-					<m:Label text="Price"/>
-				</m:VBox>
-			</m:FlexBox>
-		</headerContent>
         <sections>
 			<ObjectPageSection title="General Information">
 				<subSections>
@@ -56,7 +44,7 @@
 				</subSections>
 			</ObjectPageSection>
 
-			<ObjectPageSection title="Suppliers">
+			<ObjectPageSection title="Salesorder Items">
 				<subSections>
 					<ObjectPageSubSection>
 						<blocks>

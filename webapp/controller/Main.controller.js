@@ -18,11 +18,11 @@ sap.ui.define([
 			    this._mViewSettingsDialogs = {};
             },
 
-            onListItemPress: function () {
-                var oFCL = this.oView.getParent().getParent();
+            onListItemPress: function (oEvent) {
+                let sSalesorderPath = oEvent.getSource().getBindingContext().getPath(),
+                oSelectedSalesorder = sSalesorderPath.split("'")[1]; // We split the path /SalesOrderSet('SHRT1636') into 3 pieces by splitting on '
 
-                oFCL.setLayout(fioriLibrary.LayoutType.TwoColumnsMidExpanded);
-
+                this.getOwnerComponent().getRouter().navTo("detail", {layout: fioriLibrary.LayoutType.TwoColumnsMidExpanded, salesorder: oSelectedSalesorder});
             },
             handleFilterButtonPressed: function () {
                 this.getViewSettingsDialog("ap.salesorderapp.fragments.filterDialog")
