@@ -14,10 +14,19 @@ sap.ui.define([
                 oRouter.getRoute("detail").attachPatternMatched(this._onSalesorderMatched, this);
             },
             _onSalesorderMatched: function (oEvent) {
-                let sSalesorderID = oEvent.getParameter("arguments").salesorder || "0";
+                var sSalesorderID = oEvent.getParameter("arguments").salesorder || "0";
+                var sSalesorderPath = `/SalesOrderSet('${sSalesorderID}')`;
+            
                 this.getView().bindElement({
-                    path: `/SalesorderSet('${sSalesorderID}')`,
+                    path: sSalesorderPath,
                     model: ""
+                });
+            
+                // Assuming 'SalesorderDetail' view has an ID for the table: 'salesorderdetailTable'
+                var oTable = this.getView().byId("salesorderdetailTable");
+                oTable.bindItems({
+                    path: sSalesorderPath + "/SalesOrder_itemSet",
+                    template: oTable.getBindingInfo("items").template
                 });
             },
 
