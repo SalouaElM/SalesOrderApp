@@ -19,7 +19,6 @@ sap.ui.define([
             
                 this.getView().bindElement({
                     path: sSalesorderPath,
-                    model: ""
                 });
             
                 // Assuming 'SalesorderDetail' view has an ID for the table: 'salesorderdetailTable'

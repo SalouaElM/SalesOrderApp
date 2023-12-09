@@ -24,7 +24,32 @@
 		</m:FlexBox>
 		</headerContent>
         <sections>
-
+            <ObjectPageSection title="General Information">
+				<subSections>
+					<ObjectPageSubSection>
+						<blocks>
+							<form:SimpleForm
+								maxContainerCols="2"
+								editable="false"
+								layout="ResponsiveGridLayout"
+								labelSpanL="12"
+								labelSpanM="12"
+								emptySpanL="0"
+								emptySpanM="0"
+								columnsL="1"
+								columnsM="1">
+								<form:content>
+									<m:Text text="Vbeln: {Vbeln}"/>	
+									<m:Text text="Creation Date: { path: 'Erdat', type: 'sap.ui.model.type.DateTime', formatOptions: { UTC:true, pattern: 'dd/MM/yyyy' }}" />
+                                    <m:Text text="Organisation: {Vkorg}"/>	
+									<m:Text text="Created By: {Ernam}"/>
+                                    <m:Text text="Document Type: {Auart}"/>
+								</form:content>
+							</form:SimpleForm>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
 			<ObjectPageSection title="Salesorder Items">
 				<subSections>
 					<ObjectPageSubSection>
