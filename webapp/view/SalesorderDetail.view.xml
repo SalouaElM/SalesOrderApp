@@ -32,6 +32,7 @@
 							 <m:Table
                                id="salesorderdetailTable" items="{SalesOrder_itemSet>/SalesOrder_itemSet}"
 							   mode="None"
+                               noDataText="No Salesorder Items found for this salesorder"
                         >
                             <m:headerToolbar>
                                     <m:OverflowToolbar>

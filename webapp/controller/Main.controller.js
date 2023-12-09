@@ -87,5 +87,49 @@ sap.ui.define([
                 // apply the selected sort and group settings
                 oBinding.sort(aSorters);
             },
+
+            onAddButtonPress: function() {
+                var oView = this.getView();
+            
+                if (!this._oDialog) {
+                    this._oDialog = Fragment.load({
+                        id: oView.getId(),
+                        name: "ap.salesorderapp.fragments.CreateDialog",
+                        controller: this
+                    }).then(function (oDialog) {
+                        oView.addDependent(oDialog);
+                        return oDialog;
+                    });
+                }
+            
+                this._oDialog.then(function (oDialog) {
+                    oDialog.open();
+                });
+            },
+            
+            onCreateSalesOrder: function() {
+                // Get the values from input fields
+                var oNewSalesOrder = {
+                    Vbeln: this.byId("inputVbeln").getValue(),
+                    CreationDate: this.byId("inputCreationDate").getValue(),
+                    Organisation: this.byId("inputOrganisation").getValue(),
+                    CreatedBy: this.byId("inputCreatedBy").getValue(),
+                    DocumentType: this.byId("inputDocumentType").getValue()
+                };
+            
+                // Perform actions with the new sales order data (not implemented for backend)
+                // For now, let's just close the dialog
+                this._oDialog.then(function (oDialog) {
+                    oDialog.close();
+                });
+            },
+            
+            onCancelCreateSalesOrder: function() {
+                // Close the dialog on cancel
+                this._oDialog.then(function (oDialog) {
+                    oDialog.close();
+                });
+            }
+            
         });
     });

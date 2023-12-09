@@ -21,6 +21,10 @@
 						tooltip="Filter"
 						icon="sap-icon://filter"
 						press="handleFilterButtonPressed"/>
+                    <Button 
+                        type="Emphasized" 
+                        text="Create" 
+                        press="onAddButtonPress" />
 
 				</OverflowToolbar>
 			</headerToolbar>
@@ -73,7 +77,7 @@
                                 title="{Vbeln}"
 
                             />
-                            <Text text="{Erdat}" />
+                            <Text text="{ path: 'Erdat', type: 'sap.ui.model.type.DateTime', formatOptions: { UTC:true, pattern: 'dd/MM/yyyy' }}" />
                             <Text text="{Vkorg}" />
                             <Text text="{Ernam}" />
                             <Text text="{Auart}" />

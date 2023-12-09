@@ -1,0 +1,37 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+    <Dialog
+        id="createSalesOrderDialog"
+        title="Create Sales Order"
+        contentWidth="300px"
+        afterClose=".onDialogClosed"
+    >
+        <content>
+           <VBox>
+                <Label text="Vbeln: " class="customLabel" />
+                <Input id="inputVbeln" placeholder="Enter Vbeln"/>
+                
+                <Label text="Creation Date: " class="customLabel" />
+                <DatePicker id="inputCreationDate" placeholder="Enter Creation Date"/>
+
+                <Label text="Organisation: " class="customLabel" />
+                <ComboBox id="inputOrganisation" placeholder="Select Organisation">
+                    <core:Item key="DB00" text="DB00" />
+                    <core:Item key="DN00" text="DN00" />
+                    <core:Item key="DS00" text="DS00" />
+                    <core:Item key="UE00" text="UE00" />
+                    <core:Item key="UW00" text="UW00" />
+                </ComboBox>
+                
+                <Label text="Created By: " class="customLabel" />
+                <Input id="inputCreatedBy" placeholder="Enter Created By"/>
+                
+                <Label text="Document Type: " class="customLabel" />
+                <Input id="inputDocumentType" placeholder="Enter Document Type"/>
+            </VBox>
+        </content>
+        <buttons>
+            <Button text="Save" press=".onCreateSalesOrder" />
+            <Button text="Cancel" press=".onCancelCreateSalesOrder" />
+        </buttons>
+    </Dialog>
+</core:FragmentDefinition>
