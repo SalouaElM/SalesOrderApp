@@ -121,6 +121,7 @@ sap.ui.define([
                 // For now, let's just close the dialog
                 this._oDialog.then(function (oDialog) {
                     oDialog.close();
+                    sap.m.MessageToast.show("Sales order created");
                 });
             },
             
@@ -128,6 +129,7 @@ sap.ui.define([
                 // Close the dialog on cancel
                 this._oDialog.then(function (oDialog) {
                     oDialog.close();
+                    sap.m.MessageToast.show("Creation of sales order canceled");
                 });
             }
             
